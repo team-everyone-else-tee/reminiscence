@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Home </title>
+</head>
+<body>
+
+<section>
+    <div th:each="entry : ${journal}">
+        <h3 th:text="${entry.date}"></h3>
+        <p th:text="${entry.body}"></p>
+    </div>
+</section>
+
+
+<aside th:replace="~{fragments :: newEntry}"></aside>
+</body>
+</html>

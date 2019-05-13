@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="~{fragments :: header}">
+    <title>Join Us!</title>
+</head>
+<body>
+<form action="/signup" method="post">
+    <input type="text" name="username" required placeholder="Username"> </input>
+    <input type="password" name="password" required placeholder="Password"> </input>
+    <button type="submit" name="submit"> Start Journaling</button>
+</form>
+</body>
+</html>
