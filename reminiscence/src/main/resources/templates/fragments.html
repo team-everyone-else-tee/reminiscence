@@ -17,5 +17,14 @@
     <!--    <link th:href="@(/table.css)" rel="stylesheet">-->
 </div>
 
+
+<!--New Entry Fragment-->
+<aside th:fragment="newEntry">
+    <form action="/home/entry" method="post">
+        <input type="text" name="body" required placeholder="Write here.."/>
+        <button type="submit"> Journal!</button>
+    </form>
+</aside>
 </body>
 </html>
+

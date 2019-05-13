@@ -1,22 +1,28 @@
 package com.reminiscence.reminiscence.account;
 
+import com.reminiscence.reminiscence.journal.Entry;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 @Entity
 public class UserAccount implements UserDetails {
 
+    @Column(unique = true)
     private String username;
     private String password;
     private String joinDate;
 
+    @OneToMany(mappedBy = "user")
+    private List<Entry> journal;
+
     public UserAccount() {
+        journal = new ArrayList<>();
     }
 
     @GeneratedValue
@@ -76,5 +82,13 @@ public class UserAccount implements UserDetails {
 
     public long getId() {
         return id;
+    }
+
+    public List<Entry> getJournal() {
+        return journal;
+    }
+
+    public void setJournal(List<Entry> journal) {
+        this.journal = journal;
     }
 }

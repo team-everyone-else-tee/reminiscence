@@ -1,6 +1,8 @@
 package com.reminiscence.reminiscence.account;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -42,7 +44,13 @@ public class AccountController {
 
         repo.save(zapBrannigan);
 
-        return "signup";
+        UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(
+                zapBrannigan,
+                null,
+                zapBrannigan.getAuthorities());
+        SecurityContextHolder.getContext().setAuthentication(token);
+
+        return "redirect:/home";
     }
 
 }
