@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title> Update Entry </title>
+</head>
+<body>
+<p> At reminiscence we really believe in being true to yourself and your emotions. But we understanding that there may
+    be
+    reasons you'd want to go back and update your entries. We ask that you take a moment to reflect and confirm that
+    editing this entries content is in your best interest </p>
+<form th:action="@{/home/entry/} + ${entry.id} + @{/update}" th:method="put">
+    <input type="hidden" name="id" th:value="${entry.id}"/>
+    <input type="text" name="body" th:value="${entry.body}"/>
+    <button type="submit"> Update Entry</button>
+</form>
+
+<form th:action="@{/home/entry/} + ${entry.id} + @{/update}" th:method="delete">
+    <input type="hidden" name="id" th:value="${entry.id}"/>
+    <button type="submit"> Delete Entry</button>
+</form>
+<!--make 8080 go home-->
+<a id="cancel-update" href="/home"> Cancel </a>
+
+
+</body>
+</html>
