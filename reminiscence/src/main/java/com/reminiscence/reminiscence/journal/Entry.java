@@ -17,6 +17,7 @@ public class Entry {
 
     private String body;
     private String date;
+    private boolean isEdited;
 
     @ManyToOne
     private UserAccount user;
@@ -58,5 +59,13 @@ public class Entry {
 
     public void setUser(UserAccount user) {
         this.user = user;
+    }
+
+    public boolean isEdited() {
+        return isEdited;
+    }
+
+    public void setEdited(boolean edited) {
+        isEdited = edited;
     }
 }

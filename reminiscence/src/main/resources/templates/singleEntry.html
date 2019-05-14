@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments :: header}">
+    <title> View Page </title>
+</head>
+<body>
+<h1 entry page></h1>
+<section id="entry">
+    <h2 th:text="${entry.date}"></h2>
+    <p th:text="${entry.body}"></p>
+    <form action="/entry/{id}/update" method="get">
+        <button type="submit"> Update</button>
+    </form>
+    <a id="update-button" th:href="${entry.id} + @{/update}"> Update anchor </a>
+</section>
+
+</body>
+</html>
