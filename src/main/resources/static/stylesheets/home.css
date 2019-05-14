@@ -1,0 +1,23 @@
+#journal{
+background-color: #eeeeee;
+box-shadow: 5px 5px 5px gray;
+}
+
+#title{
+font-size: 1.5em;
+padding: 10px;
+background-color: #dddddd;
+
+}
+
+.entryDate{
+padding-top: 10px;
+padding-left: 20px;
+font-weight: bold;
+text-decoration: underline;
+}
+.entryBody{
+padding-left: 40px;
+}
+
+
