@@ -23,7 +23,7 @@ public class Entry {
 
     public Entry() {
     }
-    
+
     public Entry(String body) {
         this.body = body;
         String pattern = "yyyy-MM-dd";
