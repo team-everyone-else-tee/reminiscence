@@ -49,9 +49,18 @@ public class EntryController {
     @GetMapping("/entry/{id}")
     public String viewSingleEntry(
             @PathVariable long id,
-            Model model
+            Model model,
+            Principal p
     ) {
+        UserAccount user = accountRepo.findByUsername(p.getName());
+        Optional userId = accountRepo.findById(user.getId());
         Optional<Entry> foundEntry = entryRepo.findById(id);
+        //Optional foundEntry
+
+        if(userId != foundEntry.getUser)
+
+
+
         if (foundEntry.isPresent()) {
             Entry entry = foundEntry.get();
             model.addAttribute("entry", entry);
