@@ -52,19 +52,16 @@ public class EntryController {
             Model model,
             Principal p
     ) {
-        UserAccount user = accountRepo.findByUsername(p.getName());
-        Optional userId = accountRepo.findById(user.getId());
         Optional<Entry> foundEntry = entryRepo.findById(id);
-        //Optional foundEntry
-
-        if(userId != foundEntry.getUser)
-
-
-
         if (foundEntry.isPresent()) {
+            UserAccount user = accountRepo.findByUsername(p.getName());
             Entry entry = foundEntry.get();
-            model.addAttribute("entry", entry);
-            return "singleEntry";
+            if (user.getId() == entry.getUser().getId()) {
+                model.addAttribute("entry", entry);
+                return "singleEntry";
+            } else {
+                throw new UnauthorizedAccountException();
+            }
         }
         throw new EntryNotFoundException();
     }
@@ -72,13 +69,19 @@ public class EntryController {
     @GetMapping("/entry/{id}/update")
     public String getEntry(
             @PathVariable long id,
-            Model model
+            Model model,
+            Principal p
     ) {
         Optional<Entry> foundEntry = entryRepo.findById(id);
         if (foundEntry.isPresent()) {
+            UserAccount user = accountRepo.findByUsername(p.getName());
             Entry entry = foundEntry.get();
-            model.addAttribute("entry", entry);
-            return "updateEntry";
+            if (user.getId() == entry.getUser().getId()) {
+                model.addAttribute("entry", entry);
+                return "updateEntry";
+            } else {
+                throw new UnauthorizedAccountException();
+            }
         }
         throw new EntryNotFoundException();
     }
@@ -87,26 +90,43 @@ public class EntryController {
     public String updateEntry(
             @PathVariable long id,
             @RequestParam String body,
-            Model model
+            Model model,
+            Principal p
     ) {
         Optional<Entry> foundEntry = entryRepo.findById(id);
         if (foundEntry.isPresent()) {
+            UserAccount user = accountRepo.findByUsername(p.getName());
             Entry entry = foundEntry.get();
-            entry.setBody(body);
-            entry.setEdited(true);
-            entryRepo.save(entry);
-        } else {
-            throw new EntryNotFoundException();
+            if (user.getId() == entry.getUser().getId()) {
+                entry.setBody(body);
+                entry.setEdited(true);
+                entryRepo.save(entry);
+                return "home";
+            } else {
+                throw new UnauthorizedAccountException();
+            }
         }
-        return "home";
+        throw new EntryNotFoundException();
     }
 
     @DeleteMapping("/entry/{id}/update")
     public String deleteEntry(
-            @RequestParam long id
+            @RequestParam long id,
+            Principal p
     ) {
-        entryRepo.deleteById(id);
-        return "home";
+        Optional<Entry> foundEntry = entryRepo.findById(id);
+        if (foundEntry.isPresent()) {
+            UserAccount user = accountRepo.findByUsername(p.getName());
+            Entry entry = foundEntry.get();
+            if (user.getId() == entry.getUser().getId()) {
+                entryRepo.deleteById(id);
+                return "home";
+            } else {
+                throw new UnauthorizedAccountException();
+            }
+        } else {
+            throw new EntryNotFoundException();
+        }
     }
 
 }
