@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.view.RedirectView;
 
 import java.security.Principal;
 import java.util.List;
@@ -35,7 +36,7 @@ public class EntryController {
     }
 
     @PostMapping("/entry")
-    public String createEntry(
+    public RedirectView createEntry(
             @RequestParam String body,
             Principal p
     ) {
@@ -43,7 +44,7 @@ public class EntryController {
         Entry entry = new Entry(body);
         entry.setUser(user);
         entryRepo.save(entry);
-        return "home";
+        return new RedirectView("/home");
     }
 
     @GetMapping("/entry/{id}")
