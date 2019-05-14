@@ -10,5 +10,8 @@
   - graphic display of mood 
   - SQL to hold what we find, and analyze the data 
 
-#### References
+#### Resources
 [Date Time](http://tutorials.jenkov.com/java-internationalization/simpledateformat.html)
+
+#### Potential Resources
+[Hamburger Menu](https://codepen.io/erikterwan/pen/EVzeRP)
