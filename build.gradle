@@ -11,6 +11,9 @@ sourceCompatibility = '1.8'
 
 repositories {
 	mavenCentral()
+	maven {
+		url "https://dl.bintray.com/ibm-cloud-sdks/ibm-cloud-sdk-repo"
+	}
 }
 
 dependencies {
@@ -22,4 +25,6 @@ dependencies {
 	runtimeOnly 'org.postgresql:postgresql'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test'
+	implementation 'com.ibm.watson:ibm-watson:7.0.0'
+
 }
