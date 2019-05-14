@@ -16,4 +16,6 @@
 #### Potential Resources
 [Hamburger Menu](https://codepen.io/erikterwan/pen/EVzeRP)
 
+[Watson Auth](https://github.com/watson-developer-cloud/java-sdk#installation)
+
 [Java Watson](https://cloud.ibm.com/apidocs/tone-analyzer?code=java)
