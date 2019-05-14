@@ -15,3 +15,4 @@
 
 #### Potential Resources
 [Hamburger Menu](https://codepen.io/erikterwan/pen/EVzeRP)
+[Java Watson](https://cloud.ibm.com/apidocs/tone-analyzer?code=java)
