@@ -45,6 +45,7 @@ public class GraphController {
         int confident = 0;
         int tentative = 0;
 
+        //Increment tone counters as they are encountered
         for (Tone tone : allTones) {
             switch (tone.getTone()) {
                 case "Anger":
@@ -67,6 +68,7 @@ public class GraphController {
                     break;
             }
         }
+        // Attach every tone counter to a model and pass it to the page
         model.addAttribute("anger", anger);
         model.addAttribute("fear", fear);
         model.addAttribute("sadness", sadness);
