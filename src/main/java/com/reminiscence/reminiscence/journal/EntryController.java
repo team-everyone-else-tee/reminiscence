@@ -19,6 +19,7 @@ public class EntryController {
 
     @Autowired
     WatsonController watsonController;
+
     @Autowired
     AccountRepo accountRepo;
 

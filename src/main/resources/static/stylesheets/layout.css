@@ -1,0 +1,34 @@
+.entryBody{
+    padding-left: 40px;
+}
+
+#entryH2{
+    margin: 2.5%;
+}
+
+#update-button{
+     margin: 44%;
+     }
+
+#entry-body{
+    display: block;
+     width: 94%;
+    margin-block-start: 1em;
+    margin-block-end: 3em;
+    margin-inline-start: 1em;
+    margin-inline-end: 1em;
+    padding: 1%;
+    }
+
+#delete{
+margin-bottom:3%;
+}
+
+#update-cancel-button{
+margin-left: 2%
+}
+
+#svg-button {
+    display: inline;
+    margin: -4px;
+}
