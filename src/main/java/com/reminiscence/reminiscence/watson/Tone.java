@@ -17,8 +17,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import java.util.ArrayList;
-import java.util.List;
 
 
 @Entity
@@ -34,22 +32,11 @@ public class Tone {
     @GeneratedValue
     private Long id;
     private Double score;
-    public String tone;
-
-
-    public Tone (){}
-
-
-   /*public List toneArray = new ArrayList<Tone>();*/
-
-  /*  public static void populateArrayList(ArrayList toneArray, String tone) {
-
-        toneArray.add(tone);
-}*/
-
+    private String tone;
+  
+    //    foreign key to entry
     @ManyToOne
     private Entry entry;
-
 
     public Long getId() {
         return id;
@@ -71,6 +58,10 @@ public class Tone {
         this.tone = tone;
     }
 
+    public void setEntry(Entry entry) {
+        this.entry = entry;
+    }
+}
     public static ToneAnalysis getTestWatson(String entry) {
 
         IamOptions options = new IamOptions.Builder()

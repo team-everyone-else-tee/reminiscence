@@ -1,10 +1,7 @@
 package com.reminiscence.reminiscence.journal;
 
 import com.reminiscence.reminiscence.account.UserAccount;
-import com.reminiscence.reminiscence.watson.Tone;
-import com.reminiscence.reminiscence.watson.ToneRepo;
-import org.springframework.beans.factory.annotation.Autowired;
-
+import com.reminiscence.reminiscence.watson.Tone; 
 import javax.persistence.*;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -28,13 +25,16 @@ public class Entry {
     private String date;
     private boolean isEdited;
 
+    //    foreign key to user
     @ManyToOne
     private UserAccount user;
 
+    //    foreign key to tones
     @OneToMany(mappedBy = "entry")
-    private List<Tone> tone = new ArrayList<>();
+    private List<Tone> tones;
 
     public Entry() {
+        tones = new ArrayList<>();
     }
 
     public Entry(String body) {
@@ -80,8 +80,8 @@ public class Entry {
     public void setEdited(boolean edited) {
         isEdited = edited;
     }
-
-    public List<Tone> getTone() {
-        return tone;
+  
+    public List<Tone> getTones() {
+        return tones;
     }
 }
