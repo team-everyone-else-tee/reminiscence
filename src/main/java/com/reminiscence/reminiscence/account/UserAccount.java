@@ -25,6 +25,12 @@ public class UserAccount implements UserDetails {
         journal = new ArrayList<>();
     }
 
+    public UserAccount(String username, String password, PasswordEncoder encoder, String joinDate) {
+        this.username = username;
+        this.password = encoder.encode(password);
+        this.joinDate = joinDate;
+    }
+
     @GeneratedValue
     @Id
     private long id;
