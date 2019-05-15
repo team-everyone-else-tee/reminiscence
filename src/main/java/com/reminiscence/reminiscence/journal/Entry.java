@@ -15,6 +15,7 @@ public class Entry {
     @GeneratedValue
     private long id;
 
+    @Column(length = 5000)
     private String body;
     private String date;
     private boolean isEdited;
@@ -38,6 +39,17 @@ public class Entry {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
         String date = simpleDateFormat.format(new Date());
         this.date = date;
+        this.isEdited = false;
+    }
+
+    public Entry(String body, UserAccount user) {
+        this.body = body;
+        String pattern = "yyyy-MM-dd";
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+        String date = simpleDateFormat.format(new Date());
+        this.date = date;
+        this.isEdited = false;
+        this.user = user;
     }
 
     public long getId() {
