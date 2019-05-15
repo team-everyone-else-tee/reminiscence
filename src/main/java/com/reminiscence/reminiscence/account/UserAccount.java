@@ -35,13 +35,13 @@ public class UserAccount implements UserDetails {
     }
 
     @Override
-    public String getPassword() {
-        return password;
+    public String getUsername() {
+        return username;
     }
 
     @Override
-    public String getUsername() {
-        return username;
+    public String getPassword() {
+        return password;
     }
 
     @Override
