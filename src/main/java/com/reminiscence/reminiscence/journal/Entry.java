@@ -15,6 +15,7 @@ public class Entry {
     @GeneratedValue
     private long id;
 
+    @Column(length = 5000)
     private String body;
     private String date;
     private boolean isEdited;
