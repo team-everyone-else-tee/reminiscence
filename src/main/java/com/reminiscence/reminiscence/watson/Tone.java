@@ -6,8 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import java.util.ArrayList;
-import java.util.List;
 
 
 @Entity
@@ -18,17 +16,8 @@ public class Tone {
     private Double score;
     public String tone;
 
-
-//    List toneArray = new ArrayList<Tone>();
-//
-//    public static void populateArrayList(ArrayList toneArray, String tone) {
-//
-//        toneArray.add(tone);
-//}
-
     @ManyToOne
     public Entry entry;
-
 
     public Long getId() {
         return id;

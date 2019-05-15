@@ -2,10 +2,7 @@ package com.reminiscence.reminiscence.journal;
 
 import com.reminiscence.reminiscence.account.UserAccount;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -21,6 +18,9 @@ public class Entry {
 
     @ManyToOne
     private UserAccount user;
+
+    @OneToMany(mappedBy = "entry")
+
 
     public Entry() {
     }

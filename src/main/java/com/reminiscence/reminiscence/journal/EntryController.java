@@ -2,6 +2,7 @@ package com.reminiscence.reminiscence.journal;
 
 import com.reminiscence.reminiscence.account.AccountRepo;
 import com.reminiscence.reminiscence.account.UserAccount;
+import com.reminiscence.reminiscence.watson.WatsonController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +17,8 @@ import java.util.Optional;
 @RequestMapping("/home")
 public class EntryController {
 
+    @Autowired
+    WatsonController watsonController;
     @Autowired
     AccountRepo accountRepo;
 
@@ -43,6 +46,9 @@ public class EntryController {
         UserAccount user = accountRepo.findByUsername(p.getName());
         Entry entry = new Entry(body);
         entry.setUser(user);
+
+        watsonController.requestTones(entry);
+
         entryRepo.save(entry);
         return new RedirectView("/home");
     }
