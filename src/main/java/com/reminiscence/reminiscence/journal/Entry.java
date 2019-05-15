@@ -1,8 +1,7 @@
 package com.reminiscence.reminiscence.journal;
 
 import com.reminiscence.reminiscence.account.UserAccount;
-import com.reminiscence.reminiscence.watson.Tone;
-
+import com.reminiscence.reminiscence.watson.Tone; 
 import javax.persistence.*;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -11,6 +10,13 @@ import java.util.List;
 
 @Entity
 public class Entry {
+
+    @Autowired
+    ToneRepo toneRepo;
+
+    @Autowired
+    EntryRepo entryRepo;
+
     @Id
     @GeneratedValue
     private long id;
@@ -26,7 +32,6 @@ public class Entry {
     //    foreign key to tones
     @OneToMany(mappedBy = "entry")
     private List<Tone> tones;
-
 
     public Entry() {
         tones = new ArrayList<>();
@@ -75,7 +80,7 @@ public class Entry {
     public void setEdited(boolean edited) {
         isEdited = edited;
     }
-
+  
     public List<Tone> getTones() {
         return tones;
     }
