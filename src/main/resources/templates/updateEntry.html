@@ -1,24 +1,34 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
+<head th:replace="~{fragments :: header}">
     <title> Update Entry </title>
 </head>
 <body>
 <!-- What if we made this message popup as like a warning before updating? It seems a bit out of place as is-->
-<p> At reminiscence we really believe in being true to yourself and your emotions. But we understanding that there may
-    be
-    reasons you'd want to go back and update your entries. We ask that you take a moment to reflect and confirm that
-    editing this entries content is in your best interest </p>
-<form th:action="@{/home/entry/} + ${entry.id} + @{/update}" th:method="put">
+<!--I agree that's a pretty rad Idea. here is a solution for one the user can opt to open or close using just CSS and HTML found at https://ctrlq.org/code/20083-modal-popup-css-->
+<a href="#open-modal" id="open-modal-link">Open Warning</a>
+<div id="open-modal" class="modal-window">
+    <div>
+
+       <p> At reminiscence we believe in being true to yourself and your emotions. But we understand that there may be
+           reasons you'd want to go back and update your entries. We ask that you take a moment to reflect and confirm that
+           editing this entries content is in your best interest </p>
+
+        <a href="#modal-close" title="Close" class="modal-close">I understand and would like to proceed</a>
+
+    </div>
+</div>
+
+
+<form id="main" th:action="@{/home/entry/} + ${entry.id} + @{/update}" th:method="put">
     <input type="hidden" name="id" th:value="${entry.id}"/>
-    <input type="text" name="body" th:value="${entry.body}"/>
-    <button type="submit"> Update Entry</button>
+    <input id="entry-body" type="text" name="body" th:value="${entry.body}"/>
+    <button  type="submit"> Update Entry</button>
 </form>
 
 <form th:action="@{/home/entry/} + ${entry.id} + @{/update}" th:method="delete">
     <input type="hidden" name="id" th:value="${entry.id}"/>
-    <button type="submit"> Delete Entry</button>
+    <button id="delete" type="submit"> Delete Entry</button>
 </form>
 <!--make 8080 go home-->
 <a id="cancel-update" href="/home"> Cancel </a>

@@ -25,6 +25,12 @@ public class UserAccount implements UserDetails {
         journal = new ArrayList<>();
     }
 
+    public UserAccount(String username, String password, PasswordEncoder encoder, String joinDate) {
+        this.username = username;
+        this.password = encoder.encode(password);
+        this.joinDate = joinDate;
+    }
+
     @GeneratedValue
     @Id
     private long id;
@@ -35,13 +41,13 @@ public class UserAccount implements UserDetails {
     }
 
     @Override
-    public String getPassword() {
-        return password;
+    public String getUsername() {
+        return username;
     }
 
     @Override
-    public String getUsername() {
-        return username;
+    public String getPassword() {
+        return password;
     }
 
     @Override

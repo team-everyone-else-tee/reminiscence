@@ -22,7 +22,6 @@ public class LoginController {
             Principal p,
             Model model
     ) {
-
         //Todo; refactor so that the try catch is unnecessary
         try {
             UserAccount user = accountRepo.findByUsername(p.getName());
