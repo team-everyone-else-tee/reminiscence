@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
-<head>
+<head th:replace="~{fragments :: header}">
     <meta charset="UTF-8">
     <title> Home </title>
 </head>
 <body>
 
-<section>
+<section id="journal">
+    <h3 id="title"> Journal </h3>
     <div th:each="entry : ${journal}">
-        <h3 th:text="${entry.date}"></h3>
-        <p th:text="${entry.body}"></p>
+        <span class="entryDate" th:text="${entry.date}"></span>
+        <a class="entryLink" th:href="@{/home/entry/} + ${entry.id} "> View Entry </a>
+        <!--     I wonder if we wouldnt be better served by an icon for the "view entry" anchor -->
+        <p class="entryBody" th:text="${entry.body}"></p>
     </div>
 </section>
 

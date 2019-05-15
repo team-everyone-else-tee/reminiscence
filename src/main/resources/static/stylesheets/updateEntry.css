@@ -1,0 +1,97 @@
+/* Light-box Modal Logic from https://ctrlq.org/code/20083-modal-popup-css */
+.modal-window {
+  position: fixed;
+  background-color: rgba(200, 200, 200, 0.75);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.modal-window:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-window>div {
+  width: 400px;
+  position: relative;
+  margin: 10% auto;
+  padding: 2rem;
+  background: #fff;
+  color: #444;
+}
+
+.modal-window header {
+  font-weight: bold;
+}
+
+.modal-close {
+    color: #aaa;
+    line-height: 50px;
+    font-size: 80%;
+    position: absolute;
+    right: 2em;
+    text-align: center;
+    top: 74%;
+    text-decoration: none;
+}
+
+.modal-close:hover {
+  color: #000;
+}
+
+.modal-window h1 {
+  font-size: 150%;
+  margin: 0 0 15px;
+}
+
+
+/*end modal logic*/
+
+#open-modal-link {
+    font-size: .5em;
+    color: grey;
+    text-decoration: none;
+}
+
+#entry-body{
+ display: block;
+     width: 94%;
+    margin-block-start: 1em;
+    margin-block-end: 3em;
+    margin-inline-start: 1em;
+    margin-inline-end: 1em;
+    padding: 1%;
+    outline-style: solid;
+    outline-color: darkgray;
+    background-color: white;
+}
+
+#cancel-update{
+     margin: 3%;
+     outline: .em;
+     outline-style: solid;
+     outline-color: black;
+     outline-offset: 0.3em;
+}
+
+#main{
+    margin: 20px;
+    padding: 1%;
+    padding-bottom: 2em;
+    outline: .2em;
+    outline-style: solid;
+    outline-color: grey;
+    background-color: #eee;
+}
+
+#delete{
+margin-bottom:3%;
+}

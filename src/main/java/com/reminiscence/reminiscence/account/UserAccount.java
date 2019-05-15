@@ -91,4 +91,5 @@ public class UserAccount implements UserDetails {
     public void setJournal(List<Entry> journal) {
         this.journal = journal;
     }
+
 }
