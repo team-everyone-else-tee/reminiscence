@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
-<head>
-    <title>Join Us!</title>
+<head th:replace="~{fragments :: header}">
+    <meta charset="UTF-8">
+    <title> Join Us! </title>
 </head>
 <body>
-<form action="/signup" method="post">
+
+<section id="signup">
+    <h3 id="signupIntro"> Join Us to Journal with Reminiscence </h3>
+<div>
+    <form action="/signup" method="post">
     <input type="text" name="username" required placeholder="Username"> </input>
     <input type="password" name="password" required placeholder="Password"> </input>
-    <button type="submit" name="submit"> Start Journaling</button>
+    <button type="submit" name="submit"> Start Journaling </button>
 </form>
+</div>
+</section>
+
 </body>
 </html>
