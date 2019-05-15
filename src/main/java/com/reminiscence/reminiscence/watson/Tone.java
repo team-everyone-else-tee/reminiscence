@@ -11,7 +11,7 @@ import java.util.List;
 
 
 @Entity
-public class Emotion {
+public class Tone {
     @Id
     @GeneratedValue
     private Long id;
@@ -19,7 +19,7 @@ public class Emotion {
     public String tone;
 
 
-//    List toneArray = new ArrayList<Emotion>();
+//    List toneArray = new ArrayList<Tone>();
 //
 //    public static void populateArrayList(ArrayList toneArray, String tone) {
 //
