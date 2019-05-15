@@ -24,14 +24,15 @@ public class WatsonController {
     public void requestTones(Entry entry) {
         ToneAnalysis toneAnalysis = getToneAnalysis(entry.getBody());
         List<ToneScore> listTones = getToneList(toneAnalysis);
-        saveTones(listTones);
+        saveTones(listTones, entry);
     }
 
-    public void saveTones(List<ToneScore> listTones) {
+    public void saveTones(List<ToneScore> listTones, Entry entry) {
         for (ToneScore tone : listTones) {
             Tone newTone = new Tone();
             newTone.setTone(tone.getToneName());
             newTone.setScore(tone.getScore());
+            newTone.setEntry(entry);
             toneRepo.save(newTone);
         }
     }

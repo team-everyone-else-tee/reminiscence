@@ -14,10 +14,11 @@ public class Tone {
     @GeneratedValue
     private Long id;
     private Double score;
-    public String tone;
+    private String tone;
 
+    //    foreign key to entry
     @ManyToOne
-    public Entry entry;
+    private Entry entry;
 
     public Long getId() {
         return id;
@@ -37,6 +38,10 @@ public class Tone {
 
     public void setTone(String tone) {
         this.tone = tone;
+    }
+
+    public void setEntry(Entry entry) {
+        this.entry = entry;
     }
 }
 

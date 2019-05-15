@@ -47,9 +47,10 @@ public class EntryController {
         Entry entry = new Entry(body);
         entry.setUser(user);
 
+        entryRepo.save(entry);
+
         watsonController.requestTones(entry);
 
-        entryRepo.save(entry);
         return new RedirectView("/home");
     }
 
