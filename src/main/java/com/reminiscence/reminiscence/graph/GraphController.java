@@ -9,8 +9,19 @@ public class GraphController {
 
     @GetMapping("/pieGraph")
     public String pieGraph(Model model) {
-        model.addAttribute("pass", 50);
-        model.addAttribute("fail", 50);
+        int anger = 6;
+        int fear = 12;
+        int sadness = 6;
+        int analytical = 7;
+        int confident = 3;
+        int tentative = 6;
+        
+        model.addAttribute("anger", anger);
+        model.addAttribute("fear", fear);
+        model.addAttribute("sadness", sadness);
+        model.addAttribute("analytical", analytical);
+        model.addAttribute("confident", confident);
+        model.addAttribute("tentative", tentative);
         return "pieGraph";
     }
 }
