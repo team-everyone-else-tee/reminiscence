@@ -1,16 +1,25 @@
 package com.reminiscence.reminiscence.journal;
 
 import com.reminiscence.reminiscence.account.UserAccount;
+import com.reminiscence.reminiscence.watson.Tone;
+import com.reminiscence.reminiscence.watson.ToneRepo;
+import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class Entry {
+
+    @Autowired
+    ToneRepo toneRepo;
+
+    @Autowired
+    EntryRepo entryRepo;
+
     @Id
     @GeneratedValue
     private long id;
@@ -21,6 +30,9 @@ public class Entry {
 
     @ManyToOne
     private UserAccount user;
+
+    @OneToMany(mappedBy = "entry")
+    private List<Tone> tone = new ArrayList<>();
 
     public Entry() {
     }
@@ -67,5 +79,9 @@ public class Entry {
 
     public void setEdited(boolean edited) {
         isEdited = edited;
+    }
+
+    public List<Tone> getTone() {
+        return tone;
     }
 }
