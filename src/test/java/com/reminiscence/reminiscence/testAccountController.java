@@ -52,6 +52,30 @@ public class testAccountController {
 
     @Test
     public void testAccountCreationUsernameTaken() throws Exception {
+        String username = "test";
+        String password = "1234";
+        String date = "2019-05-14";
+
+        mockMvc.perform(MockMvcRequestBuilders.post("/signup")
+                .param("username", username)
+                .param("password", password)
+                .param("date", date))
+                .andExpect(status().is3xxRedirection())
+                .andExpect(redirectedUrl("/home"));
+        String username2 = "test";
+        String password2 = "1234";
+        String date2 = "2019-05-14";
+
+        try {
+            mockMvc.perform(MockMvcRequestBuilders.post("/signup")
+                    .param("username", username2)
+                    .param("password", password2)
+                    .param("date", date2))
+                    .andExpect(status().isInternalServerError())
+                    .andExpect(redirectedUrl("/home"));
+        } catch (Exception E) {
+            System.out.println("grats");
+        }
         // Need to test that if a user is created with the same name, everything hard stops
     }
 
