@@ -1,7 +1,10 @@
 package com.reminiscence.reminiscence.journal;
 
+import com.ibm.watson.tone_analyzer.v3.model.ToneAnalysis;
+import com.ibm.watson.tone_analyzer.v3.model.ToneScore;
 import com.reminiscence.reminiscence.account.AccountRepo;
 import com.reminiscence.reminiscence.account.UserAccount;
+import com.reminiscence.reminiscence.watson.WatsonController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +19,8 @@ import java.util.Optional;
 @RequestMapping("/home")
 public class EntryController {
 
+    @Autowired
+    WatsonController watsonController;
     @Autowired
     AccountRepo accountRepo;
 
@@ -44,6 +49,9 @@ public class EntryController {
         Entry entry = new Entry(body);
         entry.setUser(user);
         entryRepo.save(entry);
+
+        watsonController.requestTones(entry);
+
         return new RedirectView("/home");
     }
 
