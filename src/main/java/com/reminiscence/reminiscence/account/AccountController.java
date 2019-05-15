@@ -1,6 +1,7 @@
 package com.reminiscence.reminiscence.account;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -9,7 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -31,7 +31,7 @@ public class AccountController {
     public String signup(
             @RequestParam String username,
             @RequestParam String password
-    ) throws ParseException {
+    ) throws DataIntegrityViolationException {
         UserAccount zapBrannigan = new UserAccount();
         zapBrannigan.setUsername(username);
         zapBrannigan.setPassword(password, this.encoder);
