@@ -7,24 +7,28 @@
 <body>
 
 <!--header fragment-->
-<div th:fragment="header">
+<head th:fragment="header">
     <head>
         <meta charset="UTF-8">
     </head>
-    <!--    <link th:href="@(/style.css)" rel="stylesheet">-->
-    <!--    <link th:href="@(/navbar.css)" rel="stylesheet">-->
+    <link href="/stylesheets/general.css" rel="stylesheet">
+    <link href="/stylesheets/home.css" rel="stylesheet">
+    <link href="/stylesheets/entry.css" rel="stylesheet">
+    <link href="/stylesheets/updateEntry.css" rel="stylesheet">
+
     <!--    <link th:href="@(/postMaster.css)" rel="stylesheet">-->
     <!--    <link th:href="@(/table.css)" rel="stylesheet">-->
-</div>
+</head>
 
 
 <!--New Entry Fragment-->
-<aside th:fragment="newEntry">
+<aside th:fragment="newEntry" id="newEntry">
     <form action="/home/entry" method="post">
         <input type="text" name="body" required placeholder="Write here.."/>
         <button type="submit"> Journal!</button>
     </form>
 </aside>
+
 </body>
 </html>
 
