@@ -1,13 +1,12 @@
 body {
-    background-color: #6e6f72;
-
+    background-color: #19535F;
 }
 
 h1 {
     font-size: 1.5em;
-    padding: 10px;
-    background-color: #ddd;
+    background-color: #A6D0A5;
     outline: .2em;
+    padding: 1%;
 }
 
 section < h1{
@@ -25,7 +24,7 @@ form{
 }
 
 section {
-    box-shadow: 5px 5px 5px gray;
+    box-shadow: 5px 5px 5px #889696;
 }
 
 svg {

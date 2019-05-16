@@ -20,7 +20,7 @@
     </h1>
     <div id="entry-line" th:each="entry : ${journal}">
         <span class="entryDate" th:text="${entry.date}"></span>
-        <a class="a-as-button" th:href="@{/home/entry/} + ${entry.id} "> View Entry </a>
+        <a id="view-entry" class="a-as-button" th:href="@{/home/entry/} + ${entry.id} "> View Entry </a>
         <!--     I wonder if we wouldnt be better served by an icon for the "view entry" anchor -->
         <p class="entryBody" th:text="${entry.body}"></p>
     </div>

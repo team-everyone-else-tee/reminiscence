@@ -9,7 +9,8 @@
 
 #entry-line{
     outline: solid;
-    outline-color: cadetblue;
+    outline-color: #A79BB9;
+    background-color: floralwhite;
     margin: 1%;
     padding: 1%;
 }
@@ -23,21 +24,27 @@
     width: 2%;
 }
 
+#journal-entry{
+    width: 64%;
+    height: 14em;
+    background-color: floralwhite;
+}
+
 /* entry page modules */
 #entry {
-    margin: 20px;
+    margin: 2%;
     padding: 1%;
     padding-bottom: 2em;
     outline: .2em;
     outline-style: solid;
-    outline-color: grey;
+    outline-color: #A79BB9;
     background-color: #eee;
 }
 
 #single-entry-page-entry {
     display: block;
     margin-block-start: 1em;
-    margin-block-end: 3em;
+    margin-block-end: 1.5em;
     margin-inline-start: 1em;
     margin-inline-end: 1em;
     padding: 1%;
@@ -47,9 +54,12 @@
 }
 
 .a-as-button {
-    outline-style: solid;
-     outline-color: black;
-     outline-offset: 0.3em;
+        outline-style: solid;
+        outline-color: #A79BB9;
+        text-decoration: none;
+        background-color: #D3DEE0;
+        margin-left: 1em; 
+        padding: .3em;
 }
 
 /* login */

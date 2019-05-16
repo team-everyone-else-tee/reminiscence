@@ -2,13 +2,19 @@
     padding-left: 40px;
 }
 
-#entryH2{
-    margin: 2.5%;
+#entryH1{
+    padding-left: 7%
 }
 
 #update-button{
      margin: 44%;
      }
+
+#open-journal{
+    float: left;
+    margin-top: -2%;
+    padding: .5%;
+}
 
 #entry-body{
     display: block;
@@ -32,3 +38,10 @@ margin-left: 2%
     display: inline;
     margin: -4px;
 }
+
+
+#view-entry {
+     float: right;
+     margin-top: 0.5%;
+}
+
