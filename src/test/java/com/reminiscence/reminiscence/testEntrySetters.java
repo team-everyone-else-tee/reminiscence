@@ -1,4 +1,4 @@
-package com.reminiscence.reminiscence.journal;
+package com.reminiscence.reminiscence;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -22,6 +22,8 @@ public class testEntrySetters {
     }
 
     @Test
-    public void setIsEdited()
+    public void setIsEdited() {
+
+    }
 
 }
