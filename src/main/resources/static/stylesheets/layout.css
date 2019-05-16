@@ -27,11 +27,16 @@
     }
 
 #delete{
-margin-bottom:3%;
+    margin-bottom: 3%;
+    margin-left: 1.5%;
 }
 
 #update-cancel-button{
-margin-left: 2%
+    margin-left: 1.5%;
+}
+
+#update-the-buttoning{
+margin-left: -8%
 }
 
 #svg-button {

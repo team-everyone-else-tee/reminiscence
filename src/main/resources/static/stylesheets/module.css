@@ -58,8 +58,25 @@
         outline-color: #A79BB9;
         text-decoration: none;
         background-color: #D3DEE0;
-        margin-left: 1em; 
+        margin-left: 1em;
         padding: .3em;
+        box-shadow: 2px 2px 3px #889696;
+        font-family: serif;
+        font-size: small;
+        font-color: #551A8B;
+}
+
+button {
+        outline-style: solid;
+        outline-color: #A79BB9;
+        text-decoration: none;
+        background-color: #D3DEE0;
+        margin-left: 1em;
+        padding: .3em;
+        box-shadow: 2px 2px 3px #889696;
+        font-family: serif;
+        font-size: small;
+        font-color: #551A8B;
 }
 
 /* login */
@@ -112,13 +129,12 @@
 #entry-body{
     outline-style: solid;
     outline-color: darkgray;
-    background-color: white;
+    background-color: floralwhite;
 }
 
 #main{
     margin: 2%;
     padding: 1%;
-    padding-bottom: 2em;
     outline: .2em;
     outline-style: solid;
     outline-color: grey;
