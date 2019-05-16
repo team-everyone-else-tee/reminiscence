@@ -7,10 +7,16 @@ import com.ibm.watson.tone_analyzer.v3.model.ToneAnalysis;
 import com.ibm.watson.tone_analyzer.v3.model.ToneOptions;
 import com.ibm.watson.tone_analyzer.v3.model.ToneScore;
 import com.reminiscence.reminiscence.journal.Entry;
+import com.reminiscence.reminiscence.journal.EntryController;
+import com.reminiscence.reminiscence.journal.EntryRepo;
+import com.sun.jndi.ldap.EntryChangeResponseControl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,6 +25,7 @@ public class WatsonController {
 
     @Autowired
     ToneRepo toneRepo;
+
 
     @GetMapping("/watson")
     public void requestTones(Entry entry) {

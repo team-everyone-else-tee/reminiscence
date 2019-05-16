@@ -24,6 +24,9 @@
         <!--     I wonder if we wouldnt be better served by an icon for the "view entry" anchor -->
         <p class="entryBody" th:text="${entry.body}"></p>
     </div>
+    <div th:each="tone : ${entry}">
+        <p class="toneDisplay" th:text="${tone.tone}"></p>
+    </div>
 </section>
 
 

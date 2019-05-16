@@ -1,8 +1,7 @@
 package com.reminiscence.reminiscence.journal;
 
 import com.reminiscence.reminiscence.account.UserAccount;
-import com.reminiscence.reminiscence.watson.Tone;
-
+import com.reminiscence.reminiscence.watson.Tone; 
 import javax.persistence.*;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -11,10 +10,18 @@ import java.util.List;
 
 @Entity
 public class Entry {
+
+    @Autowired
+    ToneRepo toneRepo;
+
+    @Autowired
+    EntryRepo entryRepo;
+
     @Id
     @GeneratedValue
     private long id;
 
+    @Column(length = 5000)
     private String body;
     private String date;
     private boolean isEdited;
@@ -27,7 +34,6 @@ public class Entry {
     @OneToMany(mappedBy = "entry")
     private List<Tone> tones;
 
-
     public Entry() {
         tones = new ArrayList<>();
     }
@@ -38,6 +44,15 @@ public class Entry {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
         String date = simpleDateFormat.format(new Date());
         this.date = date;
+        this.isEdited = false;
+    }
+
+    public Entry(String body, String date, UserAccount user) {
+        this.body = body;
+        ;
+        this.date = date;
+        this.isEdited = false;
+        this.user = user;
     }
 
     public long getId() {
@@ -75,7 +90,7 @@ public class Entry {
     public void setEdited(boolean edited) {
         isEdited = edited;
     }
-
+  
     public List<Tone> getTones() {
         return tones;
     }
