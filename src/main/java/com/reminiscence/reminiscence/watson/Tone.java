@@ -33,6 +33,15 @@ public class Tone {
         this.date = date;
     }
 
+    public Tone(String tone) {
+        this.score = 0.49;
+        this.tone = tone;
+        String pattern = "yyyy-MM-dd";
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+        String date = simpleDateFormat.format(new Date());
+        this.date = date;
+    }
+
     public Long getId() {
         return id;
     }

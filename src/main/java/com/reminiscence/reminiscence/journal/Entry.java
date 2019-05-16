@@ -44,7 +44,6 @@ public class Entry {
 
     public Entry(String body, String date, UserAccount user) {
         this.body = body;
-        ;
         this.date = date;
         this.isEdited = false;
         this.user = user;
@@ -89,4 +88,10 @@ public class Entry {
     public List<Tone> getTones() {
         return tones;
     }
+
+    public void setTones(List<Tone> tones) {
+        this.tones = tones;
+    }
+
+
 }
