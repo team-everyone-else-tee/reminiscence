@@ -94,4 +94,10 @@ public class Entry {
     public List<Tone> getTones() {
         return tones;
     }
+
+    public void setTones(List<Tone> tones) {
+        this.tones = tones;
+    }
+
+
 }
