@@ -25,12 +25,16 @@ public class Entry {
     @ManyToOne
     private UserAccount user;
 
+    public void setTones(List<Tone> tones) {
+        this.tones = tones;
+    }
+
     //    foreign key to tones
     @OneToMany(mappedBy = "entry")
     private List<Tone> tones;
 
     public Entry() {
-        tones = new ArrayList<>();
+
     }
 
     public Entry(String body) {
@@ -40,14 +44,15 @@ public class Entry {
         String date = simpleDateFormat.format(new Date());
         this.date = date;
         this.isEdited = false;
+        this.tones = new ArrayList<>();
     }
 
     public Entry(String body, String date, UserAccount user) {
         this.body = body;
-        ;
         this.date = date;
         this.isEdited = false;
         this.user = user;
+        this.tones = new ArrayList<>();
     }
 
     public long getId() {
