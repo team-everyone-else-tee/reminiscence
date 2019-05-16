@@ -1,5 +1,7 @@
 package com.reminiscence.reminiscence.journal;
 
+import com.ibm.watson.tone_analyzer.v3.model.ToneAnalysis;
+import com.ibm.watson.tone_analyzer.v3.model.ToneScore;
 import com.reminiscence.reminiscence.account.AccountRepo;
 import com.reminiscence.reminiscence.account.UserAccount;
 import com.reminiscence.reminiscence.watson.Tone;
@@ -52,7 +54,6 @@ public class EntryController {
         UserAccount user = accountRepo.findByUsername(p.getName());
         Entry entry = new Entry(body);
         entry.setUser(user);
-
         entryRepo.save(entry);
 
         watsonController.requestTones(entry);
