@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
 import java.security.Principal;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -117,9 +118,25 @@ public class EntryController {
             UserAccount user = accountRepo.findByUsername(p.getName());
             Entry entry = foundEntry.get();
             if (user.getId() == entry.getUser().getId()) {
+
+
+                List<Tone> tones = entry.getTones();
+                List<Tone> newTonelist = new ArrayList<>();
+                entry.setTones(newTonelist);
+
+                for(Tone tone : tones){
+                    toneRepo.deleteById(tone.getId());
+                }
+
+
+
                 entry.setBody(body);
                 entry.setEdited(true);
                 entryRepo.save(entry);
+
+
+                watsonController.requestTones(entry);
+
                 return "home";
             } else {
                 throw new UnauthorizedAccountException();
