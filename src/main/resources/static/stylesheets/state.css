@@ -1,0 +1,29 @@
+/* Light-box Modal Logic from https://ctrlq.org/code/20083-modal-popup-css */
+
+.modal-window{
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.modal-window:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-close {
+    color: #aaa;
+    line-height: 50px;
+    font-size: 80%;
+    position: absolute;
+    right: 2em;
+    text-align: center;
+    top: 74%;
+    text-decoration: none;
+}
+
+.modal-close:hover {
+  color: #000;
+}

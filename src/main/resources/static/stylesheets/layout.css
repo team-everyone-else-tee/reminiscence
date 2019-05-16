@@ -1,0 +1,52 @@
+.entryBody{
+    padding-left: 40px;
+}
+
+#entryH1{
+    padding-left: 7%
+}
+
+#update-button{
+     margin: 44%;
+     }
+
+#open-journal{
+    float: left;
+    margin-top: -2%;
+    padding: .5%;
+}
+
+#entry-body{
+    display: block;
+     width: 94%;
+    margin-block-start: 1em;
+    margin-block-end: 3em;
+    margin-inline-start: 1em;
+    margin-inline-end: 1em;
+    padding: 1%;
+    }
+
+#delete{
+    margin-bottom: 3%;
+    margin-left: 1.5%;
+}
+
+#update-cancel-button{
+    margin-left: 1.5%;
+}
+
+#update-the-buttoning{
+margin-left: -8%
+}
+
+#svg-button {
+    display: inline;
+    margin: -4px;
+}
+
+
+#view-entry {
+     float: right;
+     margin-top: 0.5%;
+}
+

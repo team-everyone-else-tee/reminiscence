@@ -4,15 +4,35 @@
     <title> Update Entry </title>
 </head>
 <body>
+
+<h1>
+    <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 100 100">
+        <g>
+            <g transform="translate(50 50) scale(0.69 0.69) rotate(0) translate(-50 -50)" style="fill:#1A1A1A">
+                <svg
+                        xmlns="http://www.w3.org/2000/svg" fill="#1A1A1A" version="1.1" x="0px" y="0px"
+                        viewBox="0 0 100 100">
+                    <path style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;opacity:1;color:#000000;fill:#1A1A1A;fill-opacity:1;stroke:none;stroke-width:2;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+                          d="M 57.8125 7 A 1.0001 1.0001 0 0 0 57.125 7.5 L 17.125 77.5 A 1.0001 1.0001 0 0 0 17 78 L 17 92 A 1.0001 1.0001 0 0 0 18.40625 92.90625 L 32.40625 86.90625 A 1.0001 1.0001 0 0 0 32.875 86.5 L 72.875 16.5 A 1.0001 1.0001 0 0 0 72.5 15.125 L 58.5 7.125 A 1.0001 1.0001 0 0 0 57.90625 7 A 1.0001 1.0001 0 0 0 57.8125 7 z M 58.375 9.375 L 70.625 16.375 L 64.90625 26.375 L 52.71875 19.25 L 58.375 9.375 z M 51.71875 21 L 63.90625 28.09375 L 31.28125 85.21875 L 19 90.5 L 19 78.28125 L 51.71875 21 z M 43.8125 91 A 1.001098 1.001098 0 0 0 44 93 L 82 93 A 1.0001 1.0001 0 1 0 82 91 L 44 91 A 1.0001 1.0001 0 0 0 43.90625 91 A 1.001098 1.001098 0 0 0 43.8125 91 z "></path>
+                </svg>
+            </g>
+        </g>
+    </svg>
+    Update Entry
+</h1>
+
 <!-- What if we made this message popup as like a warning before updating? It seems a bit out of place as is-->
 <!--I agree that's a pretty rad Idea. here is a solution for one the user can opt to open or close using just CSS and HTML found at https://ctrlq.org/code/20083-modal-popup-css-->
+
 <a href="#open-modal" id="open-modal-link">Open Warning</a>
 <div id="open-modal" class="modal-window">
     <div>
 
-       <p> At reminiscence we believe in being true to yourself and your emotions. But we understand that there may be
-           reasons you'd want to go back and update your entries. We ask that you take a moment to reflect and confirm that
-           editing this entries content is in your best interest </p>
+        <p> At reminiscence we believe in being true to yourself and your emotions. Normally that means we discourage
+            our users from editing their entries. There is incredible value in the authenticity of an emotion, even if
+            you no longer feel that way. But we understand that there are very legitimate reasons you may want to go
+            back and update old entries. All we ask is that you take a moment to reflect and confirm that editing this
+            entries content is in your best interest </p>
 
         <a href="#modal-close" title="Close" class="modal-close">I understand and would like to proceed</a>
 
@@ -23,15 +43,17 @@
 <form id="main" th:action="@{/home/entry/} + ${entry.id} + @{/update}" th:method="put">
     <input type="hidden" name="id" th:value="${entry.id}"/>
     <input id="entry-body" type="text" name="body" th:value="${entry.body}"/>
-    <button  type="submit"> Update Entry</button>
+    <button id="update-the-buttoning" type="submit"> Update Entry</button>
+    <form th:action="@{/home/entry/} + ${entry.id} + @{/update}" th:method="delete">
+        <input type="hidden" name="id" th:value="${entry.id}"/>
+        <button id="delete" type="submit"> Delete Entry</button>
+        <a id="update-cancel-button" class="a-as-button" href="/home"> Cancel </a>
+    </form>
+
 </form>
 
-<form th:action="@{/home/entry/} + ${entry.id} + @{/update}" th:method="delete">
-    <input type="hidden" name="id" th:value="${entry.id}"/>
-    <button id="delete" type="submit"> Delete Entry</button>
-</form>
+
 <!--make 8080 go home-->
-<a id="cancel-update" href="/home"> Cancel </a>
 
 
 </body>

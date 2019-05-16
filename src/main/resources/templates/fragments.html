@@ -11,19 +11,18 @@
     <head>
         <meta charset="UTF-8">
     </head>
-    <link href="/stylesheets/general.css" rel="stylesheet">
-    <link href="/stylesheets/home.css" rel="stylesheet">
-    <link href="/stylesheets/login.css" rel="stylesheet">
-    <link href="/stylesheets/signup.css" rel="stylesheet">
-    <link href="/stylesheets/entry.css" rel="stylesheet">
-    <link href="/stylesheets/updateEntry.css" rel="stylesheet">
+    <link href="/stylesheets/reset.css" rel="stylesheet">
+    <link href="/stylesheets/base.css" rel="stylesheet">
+    <link href="/stylesheets/layout.css" rel="stylesheet">
+    <link href="/stylesheets/module.css" rel="stylesheet">
+    <link href="/stylesheets/state.css" rel="stylesheet">
 </head>
 
 
 <!--New Entry Fragment-->
 <aside th:fragment="newEntry" id="newEntry">
     <form action="/home/entry" method="post">
-        <input type="text" name="body" required placeholder="Write here.."/>
+        <input id="journal-entry" type="text" name="body" required placeholder="Write here.."/>
         <button type="submit"> Journal!</button>
     </form>
 </aside>

@@ -1,0 +1,35 @@
+body {
+    background-color: #19535F;
+}
+
+h1 {
+    font-size: 1.5em;
+    background-color: #A6D0A5;
+    outline: .2em;
+    padding: 1%;
+}
+
+section < h1{
+    background-color: #eee;
+    box-shadow: 5px 5px 5px gray;
+}
+
+h2 {
+    font-size: 1em;
+    outline: .2em;
+}
+
+form{
+    text-align: center;
+}
+
+section {
+    box-shadow: 5px 5px 5px #889696;
+}
+
+svg {
+        display: inline-block;
+        margin-right: -1%;
+        margin-bottom: -2%;
+        margin-top: -1%;
+}

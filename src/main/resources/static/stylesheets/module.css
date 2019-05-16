@@ -1,0 +1,155 @@
+/* Home Page Modules */
+
+.entryDate{
+    padding-top: 10px;
+    padding-left: 20px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#entry-line{
+    outline: solid;
+    outline-color: #A79BB9;
+    background-color: floralwhite;
+    margin: 1%;
+    padding: 1%;
+}
+
+#newEntry{
+    margin-top: 20px;
+    text-align: center;}
+
+#journal-svg{
+    display: inline-block;
+    width: 2%;
+}
+
+#journal-entry{
+    width: 64%;
+    height: 14em;
+    background-color: floralwhite;
+}
+
+/* entry page modules */
+#entry {
+    margin: 2%;
+    padding: 1%;
+    padding-bottom: 2em;
+    outline: .2em;
+    outline-style: solid;
+    outline-color: #A79BB9;
+    background-color: #eee;
+}
+
+#single-entry-page-entry {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1.5em;
+    margin-inline-start: 1em;
+    margin-inline-end: 1em;
+    padding: 1%;
+    outline-style: solid;
+    outline-color: darkgray;
+    background-color: white;
+}
+
+.a-as-button {
+        outline-style: solid;
+        outline-color: #A79BB9;
+        text-decoration: none;
+        background-color: #D3DEE0;
+        margin-left: 1em;
+        padding: .3em;
+        box-shadow: 2px 2px 3px #889696;
+        font-family: serif;
+        font-size: small;
+        font-color: #551A8B;
+}
+
+button {
+        outline-style: solid;
+        outline-color: #A79BB9;
+        text-decoration: none;
+        background-color: #D3DEE0;
+        margin-left: 1em;
+        padding: .3em;
+        box-shadow: 2px 2px 3px #889696;
+        font-family: serif;
+        font-size: small;
+        font-color: #551A8B;
+}
+
+/* login */
+
+#loginIntro {
+    font-size: 1.5em;
+    padding: 10px;
+    background-color: #f0f0d8;
+}
+/* Update Page */
+
+/* Light-box Modal Logic from https://ctrlq.org/code/20083-modal-popup-css */
+
+.modal-window {
+  position: fixed;
+  background-color: rgba(200, 200, 200, 0.75);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.modal-window>div {
+  width: 400px;
+  position: relative;
+  margin: 10% auto;
+  padding: 2rem;
+  background: #fff;
+  color: #444;
+}
+
+.modal-window header {
+  font-weight: bold;
+}
+
+.modal-window h1 {
+  font-size: 150%;
+  margin: 0 0 15px;
+}
+
+/*end modal logic*/
+
+#open-modal-link {
+    font-size: .5em;
+    color: grey;
+    text-decoration: none;
+}
+
+#entry-body{
+    outline-style: solid;
+    outline-color: darkgray;
+    background-color: floralwhite;
+}
+
+#main{
+    margin: 2%;
+    padding: 1%;
+    outline: .2em;
+    outline-style: solid;
+    outline-color: grey;
+    background-color: #eee;
+}
+
+/* sign up */
+
+#signup{
+    background-color: #ededed;
+    box-shadow: 5px 5px 5px gray;
+}
+
+#signupIntro{
+    font-size: 1.5em;
+    padding: 10px;
+    background-color: #f0f0d8;
+}
