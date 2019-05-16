@@ -81,11 +81,7 @@ button {
 
 /* login */
 
-#loginIntro {
-    font-size: 1.5em;
-    padding: 10px;
-    background-color: #f0f0d8;
-}
+
 /* Update Page */
 
 /* Light-box Modal Logic from https://ctrlq.org/code/20083-modal-popup-css */
@@ -143,13 +139,23 @@ button {
 
 /* sign up */
 
-#signup{
-    background-color: #ededed;
-    box-shadow: 5px 5px 5px gray;
+.front-facing-form{
+       background-color: #ededed;
+       box-shadow: 5px 5px 5px grey;
+       width: 40%;
+       height: 14em;
+       margin-left: 30%;
+       margin-top: 4%;
+   }
+
+
+#signup-input > input {
+
+height: 2em;
 }
 
-#signupIntro{
+.front-facing-h2{
     font-size: 1.5em;
     padding: 10px;
-    background-color: #f0f0d8;
+    background-color: #A79BB9;
 }
