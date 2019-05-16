@@ -23,9 +23,7 @@
     </div>
 
     <p id="single-entry-page-entry" th:text="${entry.body}"></p>
-    <form action="/entry/{id}/update" method="get">
-    </form>
-    <a class="a-as-button" th:href="${entry.id} + @{/update}">
+    <a class="a-as-button" th:href="${entry.id} + @{/update#open-modal}">
         <svg id="svg-button" xmlns="http://www.w3.org/2000/svg" width="27" height="18" viewBox="0 0 100 100">
             <g>
                 <g transform="translate(50 50) scale(0.69 0.69) rotate(0) translate(-50 -50)" style="fill:#1A1A1A">
