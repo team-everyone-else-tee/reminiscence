@@ -2,6 +2,8 @@ package com.reminiscence.reminiscence.journal;
 
 import com.reminiscence.reminiscence.account.AccountRepo;
 import com.reminiscence.reminiscence.account.UserAccount;
+import com.reminiscence.reminiscence.watson.Tone;
+import com.reminiscence.reminiscence.watson.ToneRepo;
 import com.reminiscence.reminiscence.watson.WatsonController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,11 +21,15 @@ public class EntryController {
 
     @Autowired
     WatsonController watsonController;
+
     @Autowired
     AccountRepo accountRepo;
 
     @Autowired
     EntryRepo entryRepo;
+
+    @Autowired
+    ToneRepo toneRepo;
 
     @GetMapping()
     public String getHome(
@@ -60,12 +66,18 @@ public class EntryController {
             Model model,
             Principal p
     ) {
+
         Optional<Entry> foundEntry = entryRepo.findById(id);
+        Optional<Tone> foundTone = toneRepo.findById(id);
         if (foundEntry.isPresent()) {
             UserAccount user = accountRepo.findByUsername(p.getName());
             Entry entry = foundEntry.get();
+            Tone tone = foundTone.get();
             if (user.getId() == entry.getUser().getId()) {
+
                 model.addAttribute("entry", entry);
+                model.addAttribute("tone", tone);
+
                 return "singleEntry";
             } else {
                 throw new UnauthorizedAccountException();
