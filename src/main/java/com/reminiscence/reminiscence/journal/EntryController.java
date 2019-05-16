@@ -69,15 +69,14 @@ public class EntryController {
     ) {
 
         Optional<Entry> foundEntry = entryRepo.findById(id);
-        Optional<Tone> foundTone = toneRepo.findById(id);
         if (foundEntry.isPresent()) {
             UserAccount user = accountRepo.findByUsername(p.getName());
             Entry entry = foundEntry.get();
-            Tone tone = foundTone.get();
+            Tone tone = toneRepo.findByEntryId(id);
             if (user.getId() == entry.getUser().getId()) {
 
                 model.addAttribute("entry", entry);
-                model.addAttribute("tone", tone);
+                model.addAttribute("tone", tone.getTone());
 
                 return "singleEntry";
             } else {
