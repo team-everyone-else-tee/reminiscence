@@ -1,14 +1,12 @@
 # Reminiscence
 
+A journalling web application that helps our users gain awareness of how the tone  they choose to use has an influence in shaping their experiences. 
+Users can sign up for a unique account, and then post, edit, and delete journal entries. Journal entries have a 5000 character limit. On the service, one can only see and manipulate the entries associated with their own account. 
 
-## Create entry
+When a post is made, the body of it is sent to IBM watson, watson will analyze the content of the entry for the tones that make up the expression. Watson will then return as many of the below tones that apply, along with its confidence that that specific tone was present in the body. Watsons possible tone returns are: Anger, Fear, Joy, Sadness, Analytical, Confident, and Tentative.
 
-## Mood of an entry
-  
- Using IBM Watson, we will assess and return the mood of each users entries. Additionally, our program will build on Watson's learning and improve at reading webpages specifically. 
+Entries are decorated with the tones that were found within, and the tones associated with a user can be graphed to visual the breakdown of their frequently used tones.
 
-  - graphic display of mood 
-  - SQL to hold what we find, and analyze the data 
 
 #### Resources
 [Date Time](http://tutorials.jenkov.com/java-internationalization/simpledateformat.html)
