@@ -42,11 +42,9 @@ public class Entry {
         this.isEdited = false;
     }
 
-    public Entry(String body, UserAccount user) {
+    public Entry(String body, String date, UserAccount user) {
         this.body = body;
-        String pattern = "yyyy-MM-dd";
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-        String date = simpleDateFormat.format(new Date());
+        ;
         this.date = date;
         this.isEdited = false;
         this.user = user;
