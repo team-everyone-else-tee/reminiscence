@@ -1,12 +1,13 @@
 body {
-    background-color: #19535F;
+    background-color: #D7D1DF;
 }
 
 h1 {
-    font-size: 1.5em;
-    background-color: #A6D0A5;
-    outline: .2em;
-    padding: 1%;
+        font-size: 1.5em;
+        background-color: #A79BB9;
+        outline: .2em;
+        padding: 1%;
+        box-shadow: 5px 5px 5px #889696
 }
 
 section < h1{
@@ -21,6 +22,8 @@ h2 {
 
 form{
     text-align: center;
+        margin-top: 5%;
+
 }
 
 section {
@@ -33,3 +36,9 @@ svg {
         margin-bottom: -2%;
         margin-top: -1%;
 }
+
+table{
+    margin-left: 3%;
+    margin-top: 3%;
+}
+
