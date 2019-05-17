@@ -1,4 +1,4 @@
-package com.reminiscence.reminiscence;
+package com.reminiscence.reminiscence.userAccount;
 
 import com.reminiscence.reminiscence.account.AccountController;
 import com.reminiscence.reminiscence.account.UserAccount;
