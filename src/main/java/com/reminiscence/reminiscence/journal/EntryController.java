@@ -1,7 +1,5 @@
 package com.reminiscence.reminiscence.journal;
 
-import com.ibm.watson.tone_analyzer.v3.model.ToneAnalysis;
-import com.ibm.watson.tone_analyzer.v3.model.ToneScore;
 import com.reminiscence.reminiscence.account.AccountRepo;
 import com.reminiscence.reminiscence.account.UserAccount;
 import com.reminiscence.reminiscence.watson.Tone;
@@ -75,7 +73,7 @@ public class EntryController {
             Entry entry = foundEntry.get();
             if (user.getId() == entry.getUser().getId()) {
                 model.addAttribute("entry", entry);
-                if(entry.getTones() != null){
+                if (entry.getTones() != null) {
                     model.addAttribute("tones", entry.getTones());
                 }
                 return "singleEntry";
@@ -124,22 +122,18 @@ public class EntryController {
                 List<Tone> newTonelist = new ArrayList<>();
                 entry.setTones(newTonelist);
 
-                for(Tone tone : tones){
+                for (Tone tone : tones) {
                     toneRepo.deleteById(tone.getId());
                 }
-
 
 
                 entry.setBody(body);
                 entry.setEdited(true);
                 entryRepo.save(entry);
-              watsonController.requestTones(entry);
-              
+                watsonController.requestTones(entry);
+
                 return new RedirectView("/home");
 
-
-
-                
 
             } else {
                 throw new UnauthorizedAccountException();
@@ -149,7 +143,7 @@ public class EntryController {
     }
 
     @DeleteMapping("/entry/{id}/update")
-    public String deleteEntry(
+    public RedirectView deleteEntry(
             @RequestParam long id,
             Principal p
     ) {
@@ -158,8 +152,15 @@ public class EntryController {
             UserAccount user = accountRepo.findByUsername(p.getName());
             Entry entry = foundEntry.get();
             if (user.getId() == entry.getUser().getId()) {
-                entryRepo.deleteById(id);
-                return "home";
+
+                List<Tone> tones = entry.getTones();
+                for (Tone t : tones) {
+                    toneRepo.deleteById(t.getId());
+                }
+
+                entryRepo.deleteById(entry.getId());
+                return new RedirectView("/home");
+
             } else {
                 throw new UnauthorizedAccountException();
             }
@@ -167,6 +168,5 @@ public class EntryController {
             throw new EntryNotFoundException();
         }
     }
-
 }
 
