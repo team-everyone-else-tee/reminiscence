@@ -27,12 +27,14 @@
     }
 
 #delete{
-    margin-bottom: 3%;
-    margin-left: 1.5%;
+        position: absolute;
+        margin-left: -3.5%;
+    }
 }
 
 #update-cancel-button{
-    margin-left: 1.5%;
+           position: absolute;
+           MARGIN-LEFT: 3EM;
 }
 
 #update-the-buttoning{

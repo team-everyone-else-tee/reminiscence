@@ -61,7 +61,7 @@
         text-decoration: none;
         background-color: #D3DEE0;
         margin-left: 1em;
-        padding: .3em;
+        padding: .4em;
         box-shadow: 2px 2px 3px #889696;
         font-family: serif;
         font-size: small;
@@ -69,16 +69,17 @@
 }
 
 button {
-        outline-style: solid;
-        outline-color: #19535F;
-        text-decoration: none;
-        background-color: #D3DEE0;
-        margin-left: 1em;
-        padding: .3em;
-        box-shadow: 2px 2px 3px #889696;
-        font-family: serif;
-        font-size: small;
-        font-color: #551A8B;
+            outline-style: solid;
+            outline-color: #19535F;
+            text-decoration: none;
+            background-color: #D3DEE0;
+            margin-left: 1em;
+            margin-top: 3%;
+            position: absolute;
+            padding: .3em;
+            box-shadow: 2px 2px 3px #889696;
+            font-family: serif;
+            font-size: small;
 }
 
 /* login */
