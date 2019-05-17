@@ -44,7 +44,7 @@
 
 <form id="main" th:action="@{/home/entry/} + ${entry.id} + @{/update}" th:method="put">
     <input type="hidden" name="id" th:value="${entry.id}"/>
-    <input id="entry-body" type="text" name="body" th:value="${entry.body}"/>
+    <textarea id="entry-body" type="text" name="body" th:value="${entry.body}"></textarea>
     <button id="update-the-buttoning" type="submit"> Update Entry</button>
 </form>
 <form th:action="@{/home/entry/} + ${entry.id} + @{/update}" th:method="delete">

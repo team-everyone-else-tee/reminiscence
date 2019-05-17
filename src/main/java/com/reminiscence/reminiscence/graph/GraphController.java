@@ -44,6 +44,7 @@ public class GraphController {
         int analytical = 0;
         int confident = 0;
         int tentative = 0;
+        int joy = 0;
 
         //Increment tone counters as they are encountered
         for (Tone tone : allTones) {
@@ -66,6 +67,9 @@ public class GraphController {
                 case "Tentative":
                     tentative++;
                     break;
+                case "Joy":
+                    joy++;
+                    break;
             }
         }
         // Attach every tone counter to a model and pass it to the page
@@ -75,6 +79,7 @@ public class GraphController {
         model.addAttribute("analytical", analytical);
         model.addAttribute("confident", confident);
         model.addAttribute("tentative", tentative);
+        model.addAttribute("joy", joy);
         return "pieGraph";
     }
 }
