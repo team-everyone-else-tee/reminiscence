@@ -1,6 +1,7 @@
 package com.reminiscence.reminiscence;
 
 import com.reminiscence.reminiscence.account.AccountController;
+import com.reminiscence.reminiscence.account.AccountRepo;
 import com.reminiscence.reminiscence.account.UserAccount;
 import org.junit.Before;
 import org.junit.Test;
@@ -30,6 +31,9 @@ public class testAccountController {
 
     @Autowired
     AccountController accountController;
+
+    @Autowired
+    AccountRepo accountRepo;
 
     @Autowired
     PasswordEncoder encoder;
