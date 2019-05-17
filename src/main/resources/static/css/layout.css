@@ -11,9 +11,9 @@
      }
 
 #open-journal{
-    float: left;
-    margin-top: -2%;
-    padding: .5%;
+    position: absolute;
+        margin-top: -1%;
+        padding: .5%;
 }
 
 #entry-body{
