@@ -1,4 +1,4 @@
-package com.reminiscence.reminiscence;
+package com.reminiscence.reminiscence.journal;
 
 import com.reminiscence.reminiscence.account.AccountRepo;
 import com.reminiscence.reminiscence.account.UserAccount;
