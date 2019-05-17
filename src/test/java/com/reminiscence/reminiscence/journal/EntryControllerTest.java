@@ -20,43 +20,43 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 public class EntryControllerTest {
 
-    private MockMvc mockMvc;
-
-    @Autowired
-    private WebApplicationContext webApplicationContext;
-
-    @Autowired
-    EntryController entryController;
-
-    @Before
-    public void setUp() {
-        mockMvc = MockMvcBuilders
-                .webAppContextSetup(webApplicationContext)
-                .apply(SecurityMockMvcConfigurers.springSecurity())
-                .build();
-    }
-
-    @Test
-    public void testCreateEntry() throws Exception{
-        String body = "test journal entry.";
-        String date = "2019-05-16";
-
-        mockMvc.perform(MockMvcRequestBuilders.post("/entry")
-                .param("body", body)
-                .param("date", date))
-                .andExpect(status().is3xxRedirection())
-                .andExpect(redirectedUrl("/home"));
-    }
-
-    @Test
-    public void testViewSingleEntry() {
-    }
-
-    @Test
-    public void testUpdateEntry() {
-    }
-
-    @Test
-    public void testDeleteEntry() {
-    }
+//    private MockMvc mockMvc;
+//
+//    @Autowired
+//    private WebApplicationContext webApplicationContext;
+//
+//    @Autowired
+//    EntryController entryController;
+//
+//    @Before
+//    public void setUp() {
+//        mockMvc = MockMvcBuilders
+//                .webAppContextSetup(webApplicationContext)
+//                .apply(SecurityMockMvcConfigurers.springSecurity())
+//                .build();
+//    }
+//
+//    @Test
+//    public void testCreateEntry() throws Exception{
+//        String body = "test journal entry.";
+//        String date = "2019-05-16";
+//
+//        mockMvc.perform(MockMvcRequestBuilders.post("/entry")
+//                .param("body", body)
+//                .param("date", date))
+//                .andExpect(status().is3xxRedirection())
+//                .andExpect(redirectedUrl("/home"));
+//    }
+//
+//    @Test
+//    public void testViewSingleEntry() {
+//    }
+//
+//    @Test
+//    public void testUpdateEntry() {
+//    }
+//
+//    @Test
+//    public void testDeleteEntry() {
+//    }
 }
