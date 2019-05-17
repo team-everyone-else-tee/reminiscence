@@ -107,7 +107,7 @@ public class EntryController {
     }
 
     @PutMapping("/entry/{id}/update")
-    public String updateEntry(
+    public RedirectView updateEntry(
             @PathVariable long id,
             @RequestParam String body,
             Model model,
@@ -133,11 +133,14 @@ public class EntryController {
                 entry.setBody(body);
                 entry.setEdited(true);
                 entryRepo.save(entry);
+              watsonController.requestTones(entry);
+              
+                return new RedirectView("/home");
 
 
-                watsonController.requestTones(entry);
 
-                return "home";
+                
+
             } else {
                 throw new UnauthorizedAccountException();
             }
