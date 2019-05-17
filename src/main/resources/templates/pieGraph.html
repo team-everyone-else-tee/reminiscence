@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="ISO-8859-1"/>
+<head th:replace="~{fragments :: header}">
     <title>PIE</title>
 
 
@@ -10,6 +9,10 @@
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/highcharts-3d.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+<h1> Graphs and Data </h1>
+
+<nav th:replace="~{fragments :: nav}"></nav>
 
 <div id="container" style="height: 400px"></div>
 <script th:inline="javascript">
@@ -53,6 +56,9 @@
 				]
 			} ]
 		});
+
+
+
 
 
 
