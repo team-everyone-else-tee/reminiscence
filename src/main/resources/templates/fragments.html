@@ -22,7 +22,7 @@
 <!--New Entry Fragment-->
 <aside th:fragment="newEntry" id="newEntry">
     <form action="/home/entry" method="post">
-        <input id="journal-entry" type="text" name="body" required placeholder="Write here.."/>
+        <textarea id="journal-entry" name="body" required placeholder="Write here.."></textarea>
         <button type="submit"> Journal!</button>
     </form>
 </aside>
