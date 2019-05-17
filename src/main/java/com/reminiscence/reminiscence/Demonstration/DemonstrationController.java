@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.servlet.view.RedirectView;
 
 import java.security.Principal;
 
@@ -28,13 +29,14 @@ public class DemonstrationController {
     WatsonController watsonController;
 
     @GetMapping("/Demonstration")
-    public void populateDB(Principal p) {
+    public RedirectView populateDB(Principal p) {
         UserAccount user = accountRepo.findByUsername(p.getName());
         post1(user);
         post2(user);
         post3(user);
         post4(user);
         post5(user);
+        return new RedirectView("/home");
     }
 
     public UserAccount createUser1() {
