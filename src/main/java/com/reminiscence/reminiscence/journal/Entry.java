@@ -95,9 +95,9 @@ public class Entry {
         return tones;
     }
 
-    public void setTones(List<Tone> tones) {
-        this.tones = tones;
-    }
+//    public void setTones(List<Tone> tones) {
+//        this.tones = tones;
+//    }
 
 
 }

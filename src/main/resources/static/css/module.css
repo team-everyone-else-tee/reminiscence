@@ -159,3 +159,28 @@ height: 2em;
     padding: 10px;
     background-color: #A79BB9;
 }
+
+.nav {
+        margin-left: 80%;
+        margin-top: -2em;
+}
+
+#container{
+    height: 400px;
+    overflow: hidden;
+    MARGIN: 9%;
+    PADDING: 0%;
+}
+
+.highcharts-container{
+position: relative;
+    overflow: hidden;
+    width: 1094px;
+    height: 400px;
+    text-align: left;
+    line-height: normal;
+    z-index: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    padding-top: 2%;
+
+}

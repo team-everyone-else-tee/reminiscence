@@ -21,6 +21,8 @@ h2 {
 
 form{
     text-align: center;
+        margin-top: 5%;
+
 }
 
 section {
@@ -33,3 +35,9 @@ svg {
         margin-bottom: -2%;
         margin-top: -1%;
 }
+
+table{
+    margin-left: 3%;
+    margin-top: 3%;
+}
+

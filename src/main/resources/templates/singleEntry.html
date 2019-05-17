@@ -17,6 +17,8 @@
 </svg>
 <h1 id="entryH1" th:text="${entry.date}"></h1>
 
+<nav th:replace="~{fragments :: nav}"></nav>
+
 <section id="entry">
     <div th:text="${tone}"></div>
     <p id="single-entry-page-entry" th:text="${entry.body}"></p>
