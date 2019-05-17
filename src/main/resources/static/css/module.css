@@ -9,10 +9,11 @@
 
 #entry-line{
     outline: solid;
-    outline-color: #A79BB9;
+    outline-color: #19535F;
     background-color: floralwhite;
     margin: 1%;
     padding: 1%;
+    margin-top: 3%;
 }
 
 #newEntry{
@@ -25,9 +26,10 @@
 }
 
 #journal-entry{
-    width: 64%;
-    height: 14em;
-    background-color: floralwhite;
+       width: 64%;
+       height: 14em;
+       box-shadow: 5px 5px 5px #889696;
+       background-color: floralwhite;
 }
 
 /* entry page modules */
@@ -37,8 +39,8 @@
     padding-bottom: 2em;
     outline: .2em;
     outline-style: solid;
-    outline-color: #A79BB9;
-    background-color: #eee;
+    outline-color: #19535F;
+    background-color: #floralwhite;
 }
 
 #single-entry-page-entry {
@@ -55,7 +57,7 @@
 
 .a-as-button {
         outline-style: solid;
-        outline-color: #A79BB9;
+        outline-color: #19535F;
         text-decoration: none;
         background-color: #D3DEE0;
         margin-left: 1em;
@@ -68,7 +70,7 @@
 
 button {
         outline-style: solid;
-        outline-color: #A79BB9;
+        outline-color: #19535F;
         text-decoration: none;
         background-color: #D3DEE0;
         margin-left: 1em;
@@ -124,7 +126,7 @@ button {
 
 #entry-body{
     outline-style: solid;
-    outline-color: darkgray;
+    outline-color: #19535F;
     background-color: floralwhite;
 }
 
@@ -140,8 +142,8 @@ button {
 /* sign up */
 
 .front-facing-form{
-       background-color: #ededed;
-       box-shadow: 5px 5px 5px grey;
+       background-color: floralwhite;
+       box-shadow: 5px 5px 5px #889696;
        width: 40%;
        height: 14em;
        margin-left: 30%;
@@ -157,7 +159,8 @@ height: 2em;
 .front-facing-h2{
     font-size: 1.5em;
     padding: 10px;
-    background-color: #A79BB9;
+    background-color: #19535F;
+    color: floralwhite;
 }
 
 .nav {
