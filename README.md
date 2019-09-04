@@ -1,5 +1,7 @@
 # Reminiscence
 
+[Reminiscence](https://reminiscences.herokuapp.com/)
+
 A journalling web application that helps our users gain awareness of how the tone  they choose to use has an influence in shaping their experiences. 
 Users can sign up for a unique account, and then post, edit, and delete journal entries. Journal entries have a 5000 character limit. On the service, one can only see and manipulate the entries associated with their own account. 
 
