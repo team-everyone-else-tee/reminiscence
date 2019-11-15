@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="~{fragments :: header}">
+    <meta charset="UTF-8">
+    <title> Login </title>
+</head>
+<body>
+<h1 id="loginIntro"> Login to Journal </h1>
+
+<section class="front-facing-form" id="login">
+    <h2 class="front-facing-h2"> Login </h2>
+    <div>
+        <form class="form-input" action="/perform_login" method="post">
+            <input type="text" name="username" required placeholder="Username"/>
+            <input type="password" name="password" required placeholder="Password"/>
+            <button type="submit"> Login</button>
+            <label>   Don't have an account? <a class="a-as-button" href="/signup"> Join us! </a></label>
+        </form>
+    </div>
+</section>
+
+</body>
+</html>

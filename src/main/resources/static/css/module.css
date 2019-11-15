@@ -1,0 +1,190 @@
+/* Home Page Modules */
+
+.entryDate{
+    padding-top: 10px;
+    padding-left: 20px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#entry-line{
+    outline: solid;
+    outline-color: #19535F;
+    background-color: floralwhite;
+    margin: 1%;
+    padding: 1%;
+    margin-top: 3%;
+}
+
+#newEntry{
+    margin-top: 20px;
+    text-align: center;}
+
+#journal-svg{
+    display: inline-block;
+    width: 2%;
+}
+
+#journal-entry{
+       width: 64%;
+       height: 14em;
+       box-shadow: 5px 5px 5px #889696;
+       background-color: floralwhite;
+}
+
+/* entry page modules */
+#entry {
+    margin: 2%;
+    padding: 1%;
+    padding-bottom: 2em;
+    outline: .2em;
+    outline-style: solid;
+    outline-color: #19535F;
+    background-color: #floralwhite;
+}
+
+#single-entry-page-entry {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1.5em;
+    margin-inline-start: 1em;
+    margin-inline-end: 1em;
+    padding: 1%;
+    outline-style: solid;
+    outline-color: darkgray;
+    background-color: white;
+}
+
+.a-as-button {
+        outline-style: solid;
+        outline-color: #19535F;
+        text-decoration: none;
+        background-color: #D3DEE0;
+        margin-left: 1em;
+        padding: .4em;
+        box-shadow: 2px 2px 3px #889696;
+        font-family: serif;
+        font-size: small;
+        font-color: #551A8B;
+}
+
+button {
+            outline-style: solid;
+            outline-color: #19535F;
+            text-decoration: none;
+            background-color: #D3DEE0;
+            margin-left: 1em;
+            margin-top: 3%;
+            position: absolute;
+            padding: .3em;
+            box-shadow: 2px 2px 3px #889696;
+            font-family: serif;
+            font-size: small;
+}
+
+/* login */
+
+
+/* Update Page */
+
+/* Light-box Modal Logic from https://ctrlq.org/code/20083-modal-popup-css */
+
+.modal-window {
+  position: fixed;
+  background-color: rgba(200, 200, 200, 0.75);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.modal-window>div {
+  width: 400px;
+  position: relative;
+  margin: 10% auto;
+  padding: 2rem;
+  background: #fff;
+  color: #444;
+}
+
+.modal-window header {
+  font-weight: bold;
+}
+
+.modal-window h1 {
+  font-size: 150%;
+  margin: 0 0 15px;
+}
+
+/*end modal logic*/
+
+#open-modal-link {
+    font-size: .5em;
+    color: grey;
+    text-decoration: none;
+}
+
+#entry-body{
+    outline-style: solid;
+    outline-color: #19535F;
+    background-color: floralwhite;
+}
+
+#main{
+    margin: 2%;
+    padding: 1%;
+    outline: .2em;
+    outline-style: solid;
+    outline-color: grey;
+    background-color: #eee;
+}
+
+/* sign up */
+
+.front-facing-form{
+       background-color: floralwhite;
+       box-shadow: 5px 5px 5px #889696;
+       width: 40%;
+       height: 14em;
+       margin-left: 30%;
+       margin-top: 4%;
+   }
+
+
+#signup-input > input {
+
+height: 2em;
+}
+
+.front-facing-h2{
+    font-size: 1.5em;
+    padding: 10px;
+    background-color: #19535F;
+    color: floralwhite;
+}
+
+.nav {
+        margin-left: 80%;
+        margin-top: -2em;
+}
+
+#container{
+    height: 400px;
+    overflow: hidden;
+    MARGIN: 9%;
+    PADDING: 0%;
+}
+
+.highcharts-container{
+position: relative;
+    overflow: hidden;
+    width: 1094px;
+    height: 400px;
+    text-align: left;
+    line-height: normal;
+    z-index: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    padding-top: 2%;
+
+}
